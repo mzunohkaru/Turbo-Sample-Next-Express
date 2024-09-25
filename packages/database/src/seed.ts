@@ -1,19 +1,27 @@
-import { PrismaClient } from "@prisma/client/extension"
+import { PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient()
 
-async function Seed() {
+async function seed() {
   const userData = {
-    name: 'テストユーザー',
-    email: 'test@example.com',
+    userName: '田中卓志',
+    email: 'tanaka@example.com',
+    password: 'password',
   }
 
-  await prisma.user.create({
-    data: userData,
-  })
+  try {
+    const user = await prisma.users.create({
+      data: userData,
+    })
+    console.log(`ユーザーが作成されました: ${user.userName}`)
+  } catch (error) {
+    console.error('シード処理中にエラーが発生しました:', error)
+  } finally {
+    await prisma.$disconnect()
+  }
 }
 
-Seed()
+seed()
   .catch(e => {
     console.error(e)
   })
