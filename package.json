@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "dev": "cp packages/database/.env.example packages/database/.env && turbo dev",
+    "dev": "turbo dev",
     "dev:server": "turbo dev --filter=server",
     "dev:client": "turbo dev --filter=client",
     "check": "turbo check",
