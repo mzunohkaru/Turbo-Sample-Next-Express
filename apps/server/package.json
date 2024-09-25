@@ -20,12 +20,15 @@
     "@repo/schema": "workspace:*",
     "@types/cors": "^2.8.17",
     "cors": "^2.8.5",
-    "express": "^4.21.0"
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "@repo/typescript-config": "workspace:*",
     "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^22.5.0",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
