@@ -5,6 +5,8 @@
 ### SetUp
 
 ```
+pnpm install
+cp packages/database/.env.example.docker packages/database/.env
 pnpm docker:db
 pnpm db:deploy
 pnpm generate
