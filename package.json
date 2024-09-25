@@ -1,0 +1,26 @@
+{
+  "name": "turbo-sample",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "cp packages/database/.env.example packages/database/.env && turbo dev",
+    "dev:server": "turbo dev --filter=server",
+    "dev:client": "turbo dev --filter=client",
+    "check": "turbo check",
+    "lint": "turbo lint",
+    "format": "turbo format",
+    "docker": "cp packages/database/.env.example packages/database/.env && docker compose up --build",
+    "docker:dev": "cp packages/database/.env.example.docker packages/database/.env && docker compose -f docker-compose.local.yaml up --build",
+    "docker:db": "docker compose -f packages/database/docker-compose.yaml up -d",
+    "db:deploy": "cd packages/database && pnpm dlx prisma migrate deploy",
+    "generate": "cd packages/database && pnpm dlx prisma generate"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.14",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@8.15.9",
+  "engines": {
+    "node": ">=20"
+  }
+}

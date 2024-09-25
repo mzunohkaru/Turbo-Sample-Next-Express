@@ -1,0 +1,36 @@
+{
+  "name": "@repo/database",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "keywords": [],
+  "scripts": {
+    "build": "tsc",
+    "build:w": "tsc -w",
+    "db:dev": "pnpm dlx prisma migrate dev",
+    "db:deploy": "pnpm dlx prisma migrate deploy",
+    "db:push": "pnpm dlx prisma db push",
+    "db:seed": "ts-node src/seed.ts",
+    "db:format": "prisma format",
+    "generate": "prisma generate",
+    "studio": "prisma studio",
+    "check": "biome check ./src",
+    "lint": "biome lint --apply ./src",
+    "format": "biome format --write ./src"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@repo/typescript-config": "*",
+    "@types/node": "^22.5.0",
+    "prisma": "^5.18.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.19.0"
+  }
+}
