@@ -19,6 +19,7 @@
   "dependencies": {
     "@repo/database": "workspace:*",
     "@repo/schema": "workspace:*",
+    "@supabase/supabase-js": "^2.45.4",
     "@types/cors": "^2.8.17",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
