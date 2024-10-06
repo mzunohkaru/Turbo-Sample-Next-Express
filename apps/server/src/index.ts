@@ -1,20 +1,16 @@
 import express, { Request, Response, NextFunction } from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import { createClient } from '@supabase/supabase-js'
 
-import authRouter from './router/auth'
-import userRouter from './router/user'
+import supabase from '@/lib/supabase'
+
+import authRouter from '@/router/auth'
+import userRouter from '@/router/user'
 
 dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 8080
-
-const supabase = createClient(
-  process.env.SUPABASE_URL as string,
-  process.env.SUPABASE_KEY as string
-)
 
 app.use(cors())
 app.use(express.json())
